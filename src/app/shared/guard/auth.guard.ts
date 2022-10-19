@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  
+
   constructor(
     public authService: AuthService,
     public router: Router
@@ -17,6 +17,6 @@ export class AuthGuard implements CanActivate {
     if(this.authService.isLoggedIn !== true) {
       this.router.navigate(['sign-in'])
     }
-    return true;
+    return this.authService.isLoggedIn == true ? true : false;
   }
 }

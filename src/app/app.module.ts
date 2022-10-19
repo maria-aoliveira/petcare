@@ -9,7 +9,6 @@ import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
@@ -20,7 +19,6 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     SignupComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,

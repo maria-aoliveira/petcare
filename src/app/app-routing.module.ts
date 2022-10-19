@@ -7,13 +7,14 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { AuthGuard } from './shared/guard/auth.guard';
+import { LoginGuard } from './shared/guard/login.guard';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
-  { path: 'sign-in', component: SigninComponent },
-  { path: 'register-user', component: SignupComponent },
+  { path: 'sign-in', component: SigninComponent, canActivate: [LoginGuard] },
+  { path: 'register-user', component: SignupComponent, canActivate: [LoginGuard] },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [AuthGuard] },
   { path: 'verify-email-address', component: VerifyEmailComponent },
 ];
 
